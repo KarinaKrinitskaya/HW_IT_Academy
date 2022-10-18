@@ -82,9 +82,9 @@ class Homework_2
     public void Task_5()
     {
         //можно было использовать боксинг, но мы этого избегаем используя структуру ValueTuple (значимый тип)
-        var purchase = new Dictionary<string, ValueTuple<double, double>>()// cловарь со строкой-ключом и кортежем(структура) - значением
+        var purchase = new Dictionary<string, ValueTuple<double, double>>()// cловарь со строкой-ключом и кортежем(структурой) - значением
             {
-                {"Apple", new ValueTuple<double, double>(3,5)},//первый double - кол-во, второй цена за штуку
+                {"Apple", new ValueTuple<double, double>(3,5)},//первый double - кол-во, второй - цена за штуку
                 {"Flour", new ValueTuple<double, double>(2,1)},
                 {"Sugar", new ValueTuple<double, double>(2,5)},
                 {"Eggs", new ValueTuple<double, double>(10,6)},

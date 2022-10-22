@@ -96,7 +96,3 @@ static class Homework_3
         }
     }
 }
-
-
-
-

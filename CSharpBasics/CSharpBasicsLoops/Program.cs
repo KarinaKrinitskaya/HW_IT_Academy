@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Homework_3.Tutti_frutti3();
+Homework_3.Tutti_frutti();
 Console.ReadLine();
 
 static class Homework_3
@@ -21,17 +21,17 @@ static class Homework_3
     }
     static void CheckNumbers(int n)
     {
-        if (n % 2 == 0)
+        if (n % 2 == 0 && n % 5 == 0)
         {
-            Console.WriteLine("tutti");
+            Console.WriteLine("tutti-frutti");
         }
         else if (n % 5 == 0)
         {
             Console.WriteLine("frutti");
         }
-        else if (n % 2 == 0 && n % 5 == 0)
+        else if (n % 2 == 0)
         {
-            Console.WriteLine("tutti-frutti");
+            Console.WriteLine("tutti");
         }
         else
         {
@@ -96,7 +96,3 @@ static class Homework_3
         }
     }
 }
-
-
-
-

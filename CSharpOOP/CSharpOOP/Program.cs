@@ -124,10 +124,6 @@ static class Homework_1
         return val;
     }
 
-
-
-
-
     //Overloading of methods
 
     static public double theAreaOfaFigure(int a, int b, double angleBetweenSidesAB)

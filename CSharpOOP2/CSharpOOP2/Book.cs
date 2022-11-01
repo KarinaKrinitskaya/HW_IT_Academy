@@ -91,9 +91,9 @@ namespace CSharpOOP2
         }
 
         //overload??? method
-        public void TryFindBook(string availability)
+        public void TryFindBook(bool availability)
         {
-            if(availability == "Not available")
+            if(!availability)
             {
                 Console.WriteLine("Sorry, this book is impossible to find");
             }

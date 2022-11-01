@@ -79,7 +79,7 @@ var lang = Book.Language;
 #region Task 18
 
 Book.TryFindBook();
-book001.TryFindBook("Not available");
+book001.TryFindBook(false);
 
 #endregion
 

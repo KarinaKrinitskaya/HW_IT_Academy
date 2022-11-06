@@ -23,10 +23,23 @@ namespace CSharpOOP3
 
         #endregion
 
+        #region Property
+
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+
+            set => _name = value;
+        }
+
+        #endregion
+
         #region Methods
 
         public abstract double GetVolume();
-
 
         public virtual void PrintShapeInf()
         {

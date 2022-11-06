@@ -5,7 +5,6 @@ namespace CSharpOOP3
     {
         #region Fields
 
-        public string Name;
         public int Radius;
 
         #endregion
@@ -14,7 +13,6 @@ namespace CSharpOOP3
 
         public Ball(string name, int radius) : base(name)
         {
-            Name = name;
             Radius = radius;
         }
 
@@ -28,8 +26,8 @@ namespace CSharpOOP3
 
         public override double GetVolume()
         {
-            double Volume = ((4.0 / 3) * Math.PI) * Math.Pow(Radius, 3);
-            return Volume;
+            double volume = ((4.0 / 3) * Math.PI) * Math.Pow(Radius, 3);
+            return volume;
         }
 
         public override void PrintShapeInf()

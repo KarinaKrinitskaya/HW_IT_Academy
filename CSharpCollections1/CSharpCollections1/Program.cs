@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Xml.Linq;
 using CSharpCollections1;
 
@@ -104,14 +105,20 @@ var citizens = new List<Citizen>()
     new Citizen("Kokuliy","Rick","Pukovich", "the Ossolinski family", "7", new DateTime(2000, 8, 21)),
     new Citizen("Olenna","Lanicter","Sonovna", "Stefan Wiechecki", "100", new DateTime(1998, 2, 13)),
     new Citizen("Judo","Tusklo","Tamarovich", "Julian Tuwim", "93", new DateTime(2005, 4, 10)),
-    new Citizen("Sonic","Tractor","Alexeevna", "Romuald Traugutt", "322", new DateTime(2020, 1, 30))
+    new Citizen("Sonic","Tractor","Alexeevna", "Romuald Traugutt", "322", new DateTime(2020, 1, 30)),
+    new Citizen("Molly","Tractor","Sonicovna", "Romuald Traugutt", "322", new DateTime(2001, 2, 15)),
+    new Citizen("Poka","Tractor","Babayavna", "Romuald Traugutt", "322", new DateTime(1990, 9, 3)),
+    new Citizen("Number","Pi","Luludovich", "Romuald Traugutt", "302", new DateTime(1979, 12, 8))
 };
+
+Console.WriteLine("Enter the street of the voters:");
+var streetV = Console.ReadLine();
 
 var voters = new List<Citizen>();
 
 foreach (var c in citizens)
 {
-    if (c.CanVote())
+    if (c.CanVote() && c.Street == streetV)
     {
         voters.Add(c);
     }
@@ -120,6 +127,7 @@ foreach (var c in citizens)
 voters.Sort();
 
 Console.WriteLine("List of voters:");
+
 foreach (var v in voters)
 {
     v.PrintInfo();

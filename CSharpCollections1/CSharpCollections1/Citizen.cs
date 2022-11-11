@@ -101,7 +101,7 @@ namespace CSharpCollections1
         public bool CanVote()
         {
             int legalAge = 18;
-            return GetAge() > legalAge ? true : false;
+            return GetAge() >= legalAge ? true : false;
         }
 
         public int CompareTo(Citizen? other)

@@ -94,7 +94,7 @@ List<int> collections5 = new List<int>() { 100, 7, 110, 0, 15, 90, 87, 33, 1, 54
 
 var someNumber = ReadValue<int>(int.TryParse);
 
-bool has = collections5.Any(n => n == someNumber);
+bool has = collections5.Contains(someNumber);
 
 if (has)
 {

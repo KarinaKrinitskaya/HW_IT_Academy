@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CSharpOOP2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CSharpOOP2">
+      <HintPath>..\..\CSharpOOP2\CSharpOOP2\bin\Debug\net6.0\CSharpOOP2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -21,7 +21,7 @@ PrintCollection(divideby3);
 
 List<dynamic> collection2 = new List<dynamic>() { -7, 9, 11, -15, 13, -9, -10, 12, 14, -8 };
 
-var negativeNumbers = collection2.Where<dynamic>(n => n < 0 && n <= -10);
+var negativeNumbers = collection2.Where(n => n < 0 || n <= 10);
 
 Console.WriteLine("\n\u001b[34mConsole output task 2:\u001b[35m");
 
@@ -48,7 +48,7 @@ PrintCollection(sortAnimal);
 
 List<dynamic> cities = new List<dynamic>() { "Minsk", "Warsaw", "Lisbon", "Porto", "Barselona", "Rome" };
 
-var resultCities = cities.Where<dynamic>(city => city[0].Equals('P') && city[city.Length - 1].Equals('o'));
+var resultCities = cities.Where(city => city[0].Equals('P') && city[city.Length - 1].Equals('o'));
 
 Console.WriteLine("\n\u001b[34mConsole output task 4:\u001b[35m");
 

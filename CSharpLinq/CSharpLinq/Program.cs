@@ -48,7 +48,9 @@ PrintCollection(sortAnimal);
 
 List<dynamic> cities = new List<dynamic>() { "Minsk", "Warsaw", "Lisbon", "Porto", "Barselona", "Rome" };
 
-var resultCities = cities.Where(city => city[0].Equals('P') && city[city.Length - 1].Equals('o'));
+//var resultCities = cities.Where(city => city.Equals('P') && city[city.Length - 1].Equals('o'));
+
+var resultCities = cities.Where(city => city.StartsWith('P') && city.EndsWith('o'));
 
 Console.WriteLine("\n\u001b[34mConsole output task 4:\u001b[35m");
 
@@ -60,7 +62,7 @@ PrintCollection(resultCities);
 
 Console.WriteLine("Enter the long string:");
 
-//Lacrimosa dies illa Qua resurget ex favilla Judicandus homo reus
+//LACRIMOSA dies illa QUA resurget ex favilla JUDICANDUS homo reus
 
 var someStr = Console.ReadLine();
 
@@ -68,7 +70,7 @@ var someStr = Console.ReadLine();
 //regular Expressions for //"LacrimosaDiesIlla"
 //string[] split = Regex.Split(someStr, @"(?<!^)(?=[A-Z])");
 
-var resultString = someStr.Split(' ').Where(s => char.IsUpper(s[0]));
+var resultString = someStr.Split(' ').Where(s => s.Equals(s.ToUpper()));
 
 Console.WriteLine("\n\u001b[34mConsole output task 5:\u001b[35m");
 
@@ -80,7 +82,9 @@ PrintCollection(resultString);
 
 List<dynamic> collections4 = new List<dynamic>() { 7, 9, 11, 15, 13, 9, 9, 12, 14, 9 };
 
-var result4 = collections4.Distinct().OrderByDescending(c => c);
+//var result4 = collections4.Distinct().OrderByDescending(c => c);
+
+var result4 = collections4.Distinct().Reverse();
 
 Console.WriteLine("\n\u001b[34mConsole output task 6:\u001b[35m");
 

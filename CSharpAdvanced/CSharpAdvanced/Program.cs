@@ -10,8 +10,7 @@ GetFirstElemList(flowers);
 
 static T GetFirstElemList<T>(List<T> someList)
 {
-    T firstElemInList = someList.First();
-    return firstElemInList;
+    return someList.First();
 }
 
 #endregion
@@ -36,7 +35,7 @@ static double GetHeapPriceLine<T>(T flower, int q) where T : Flower
 static void PrintHeapPriceLine<T>(T flower, int q) where T : Flower
 {
     double totalPrice = GetHeapPriceLine<T>(flower, q);
-    Console.WriteLine($"{GetClassName<T>()} in quantity {q}, unit price {flower.Price}, total price {totalPrice}");
+    Console.WriteLine($"{flower.Name} in quantity {q}, unit price {flower.Price}, total price {totalPrice}");
 }
 
 #endregion

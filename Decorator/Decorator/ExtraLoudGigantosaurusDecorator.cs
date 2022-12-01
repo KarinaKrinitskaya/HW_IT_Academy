@@ -7,7 +7,7 @@ namespace Decorator
 	{
 		public ExtraLoudGigantosaurusDecorator(IGigantosaurus gigantosaurus) : base(gigantosaurus) { }
 
-        override public void Roar()
+        public override void Roar()
         {
             base.Roar();
             Console.WriteLine("THE DESEPTICONS ATTACK !!!!");

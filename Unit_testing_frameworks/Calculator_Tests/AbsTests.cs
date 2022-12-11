@@ -17,10 +17,9 @@ public class AbsTests
         Calculator calc = new Calculator();
 
         // Act
-        calc.Abs(param);
+        double actual = calc.Abs(param);
 
         // Assert
-        double actual = calc.Abs(param);
         Assert.AreEqual(expectedRes, actual);
     }
 

@@ -15,8 +15,10 @@ namespace Calculator_Tests
             // Arrange
             Calculator calc = new Calculator();
 
-            // Assert
+            //Act
             var actualRes = calc.Add(inputA, inputB);
+
+            // Assert
             Assert.AreEqual(expectedRes, actualRes);
         }
     }

@@ -13,9 +13,6 @@ namespace Calculator_Tests
             double param = 20;
             Calculator calc = new Calculator();
 
-            // Act
-            calc.isNegative(param);
-
             // Assert
             Assert.IsFalse(calc.isNegative(param));
         }
@@ -26,9 +23,6 @@ namespace Calculator_Tests
             // Arrange
             double param = -20;
             Calculator calc = new Calculator();
-
-            // Act
-            calc.isNegative(param);
 
             // Assert
             Assert.IsTrue(calc.isNegative(param));

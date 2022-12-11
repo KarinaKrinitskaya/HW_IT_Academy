@@ -16,10 +16,9 @@ namespace Calculator_Tests
             Calculator calc = new Calculator();
 
             // Act
-            calc.Pow(paramA, paramB);
+            double actual = calc.Pow(paramA, paramB);
 
             // Assert
-            double actual = calc.Pow(paramA, paramB);
             Assert.AreEqual(expectedRes, actual);
         }
 
@@ -32,8 +31,10 @@ namespace Calculator_Tests
             // Arrange
             Calculator calc = new Calculator();
 
-            // Assert
+            //Act
             var actualRes = calc.Multiply(inputA, inputB);
+
+            // Assert
             Assert.AreEqual(expectedRes, actualRes);
         }
     }

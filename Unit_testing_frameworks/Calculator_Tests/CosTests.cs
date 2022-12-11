@@ -16,7 +16,6 @@ namespace Calculator_Tests
 
             // Act
             calc.Cos(param);
-
         }
     }
 }

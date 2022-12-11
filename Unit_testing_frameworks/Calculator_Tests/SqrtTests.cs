@@ -15,10 +15,9 @@ namespace Calculator_Tests
             Calculator calc = new Calculator();
 
             // Act
-            calc.Sqrt(param);
+            double actual = calc.Sqrt(param);
 
             // Assert
-            double actual = calc.Sqrt(param);
             Assert.AreEqual(expectedRes, actual);
         }
     }

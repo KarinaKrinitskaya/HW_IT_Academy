@@ -17,7 +17,6 @@ namespace Calculator_Tests
             calc.isNegative(param);
 
             // Assert
-            bool actual = calc.isNegative(param);
             Assert.IsFalse(calc.isNegative(param));
         }
 
@@ -32,7 +31,6 @@ namespace Calculator_Tests
             calc.isNegative(param);
 
             // Assert
-            bool actual = calc.isNegative(param);
             Assert.IsTrue(calc.isNegative(param));
         }
     }

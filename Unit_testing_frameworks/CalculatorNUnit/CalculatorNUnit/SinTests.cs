@@ -3,9 +3,10 @@ using CSharpCalculator;
 
 namespace CalculatorNUnit
 {
-	public class SinTests
-	{
+    public class SinTests
+    {
         [TestFixture]
+        [Parallelizable]
         public class SinNegativeTests
         {
             private Calculator calculator;

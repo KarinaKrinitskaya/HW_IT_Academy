@@ -4,6 +4,7 @@ using CSharpCalculator;
 namespace CalculatorNUnit
 {
     [TestFixture]
+    [Parallelizable]
     public class PowTests
     {
         private Calculator calculator;
@@ -34,7 +35,7 @@ namespace CalculatorNUnit
             double expRes = 9;
             calculator = null;
 
-            Assert.Throws<NullReferenceException>(() => calculator.Pow(inputA,inputB));
+            Assert.Throws<NullReferenceException>(() => calculator.Pow(inputA, inputB));
         }
 
     }

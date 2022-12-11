@@ -15,11 +15,7 @@ namespace Calculator_Tests
             Calculator calc = new Calculator();
 
             // Act
-            var ex = Assert.ThrowsException<NotFiniteNumberException>(() => calc.Cos(param));
             calc.Cos(param);
-
-            //Assert
-            Assert.AreEqual("Wrong input", ex.Message);
 
         }
     }

@@ -30,7 +30,7 @@ namespace CalculatorNUnit
         public void DivideValidResNegativeTest()
         {
             double inputA = 9;
-            double inputB = Math.Log(-100,10);
+            double inputB = Math.Log(-100, 10);
             double expRes = double.NaN; // в output "не число
 
             double actualRes = calculator.Divide(inputA, inputB);
@@ -43,7 +43,7 @@ namespace CalculatorNUnit
         {
             double inputA = 9;
             double inputB = 0;
-            double expRes = double.PositiveInfinity; 
+            double expRes = double.PositiveInfinity;
 
             double actualRes = calculator.Divide(inputA, inputB);
 

@@ -4,6 +4,7 @@ using CSharpCalculator;
 namespace CalculatorNUnit
 {
     [TestFixture]
+    [Parallelizable]
     public class DivideTests
     {
         private Calculator calculator;

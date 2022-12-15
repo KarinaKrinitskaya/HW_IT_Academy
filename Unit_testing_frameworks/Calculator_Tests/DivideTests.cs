@@ -1,7 +1,4 @@
-﻿using System;
-using CSharpCalculator;
-
-namespace Calculator_Tests
+﻿namespace Calculator_Tests
 {
 	[TestClass]
 	public class DivideTests

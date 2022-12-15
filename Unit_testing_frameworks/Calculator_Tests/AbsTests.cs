@@ -1,37 +1,40 @@
-﻿using System;
-
-namespace Calculator_Tests;
-
-using System.Security.Principal;
-using CSharpCalculator;
-
-[TestClass]
-public class AbsTests
+﻿namespace Calculator_Tests
 {
-    [TestMethod]
-    public void AbsValidResult()
+    [TestClass]
+    public class AbsTests
     {
-        // Arrange
-        double param = 123;
-        double expectedRes = 123;
-        Calculator calc = new Calculator();
+        private Calculator calc;
+        private double param;
+        private double expectedRes;
 
-        // Act
-        double actual = calc.Abs(param);
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            param = 123;
+            expectedRes = 123;
+            Calculator calc = new Calculator();
+        }
 
-        // Assert
-        Assert.AreEqual(expectedRes, actual);
-    }
+        [TestMethod]
+        public void AbsValidResult()
+        {
+            // Act
+            var actual = calc.Abs(param);
 
-    [TestMethod]
-    [ExpectedException(typeof(NotFiniteNumberException))]
-    public void AbsThrowsException()
-    {
-        // Arrange
-        object param = "ten";
-        Calculator calc = new Calculator();
+            // Assert
+            Assert.AreEqual(expectedRes, actual);
+        }
 
-        // Act
-        calc.Abs(param);
+        [TestMethod]
+        [ExpectedException(typeof(NotFiniteNumberException))]
+        public void AbsThrowsException()
+        {
+            // Arrange
+            object param = "ten";
+            Calculator calc = new Calculator();
+
+            // Act
+            calc.Abs(param);
+        }
     }
 }

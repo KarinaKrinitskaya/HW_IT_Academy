@@ -11,7 +11,9 @@ public class EpamSiteTest
         driver = new ChromeDriver();
         driver.Manage().Window.Maximize();
         driver.Navigate().GoToUrl(urlMain);
-        driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(9);
+        driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(20);
+        Thread.Sleep(10000);
+        driver.FindElement(By.XPath("//button[@id='onetrust-accept-btn-handler']")).Click();
     }
 
     [Test]
@@ -49,11 +51,11 @@ public class EpamSiteTest
         driver.FindElement(By.XPath("//form[@action='/search']/child::button[@class='header-search__submit']")).Click();
 
         Assert.That(driver.Url, Is.EqualTo(urlSearch), "Search doesn't work!");
-        var expRes = driver.FindElement(By.XPath("(//*[@class='search-results__title-link'])[1]")).Text;
-        driver.FindElement(By.XPath("(//*[@class='search-results__title-link'])[1]")).Click();
-        var actualRes = driver.FindElement(By.XPath("//*[@class='title__bottom-line']")).Text;
+        var expRes = driver.FindElement(By.XPath("//*[@class='search-results__title-link']")).Text;
+        driver.FindElement(By.XPath("//*[@class='search-results__title-link']")).Click();
+        var actualRes = driver.FindElement(By.XPath("//h1")).Text;
 
-        Assert.That(expRes, Is.EqualTo(actualRes), "The title of the article does not match the title from the search!");
+        Assert.That(actualRes, Is.EqualTo(expRes), "The title of the article does not match the title from the search!");
     }
 
     [TearDown]
@@ -65,9 +67,10 @@ public class EpamSiteTest
 
 //Task 5
 //Keyword contains - //*[@class='tabs__title' and contains(@role,'presentation')]
-//axis following-sibling/preceding-sibling - //*[@class="button-ui bg-color-white standard"]//following-sibling::span / //*[@class="top-navigation__item continuum"]//preceding-sibling::a
+//axis following-sibling/preceding-sibling - //*[@class="button-ui bg-color-white standard"]//following-sibling::span /
+//*[@class="top-navigation__item continuum"]//preceding-sibling::a
 //axis parent - //*[@class="tabs__link js-tabs-link"]//parent::div
 
-//Site:https://www.epam.com/search?q=Business+Analysis
-//axis first/last - //*[@class='search-results__title-link'])[1] / (//*[@class='search-results__title-link'])[last()]
+//Site for check:https://www.epam.com/search?q=Business+Analysis
+//axis first/last - //article[@class='search-results__item'][1] / //article[@class='search-results__item'][last()]
 //axis child - //form[@action='/search']/child::button[@class='header-search__submit']

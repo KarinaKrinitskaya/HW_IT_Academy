@@ -21,7 +21,7 @@ public class Tests
     [Test]
     public void CheckHeader()
     {
-        var isDispl = driver.FindElement(By.XPath("//*[@href=\"/careers\"]")).Displayed;
+        var isDispl = driver.FindElement(By.XPath("//*[@class='header-ui']")).Displayed;
         Assert.IsTrue(isDispl, "Header is not displayed");
     }
 

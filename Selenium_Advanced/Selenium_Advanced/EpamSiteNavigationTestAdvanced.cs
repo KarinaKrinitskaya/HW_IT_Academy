@@ -16,7 +16,7 @@ public class EpamSiteNavigationTestAdvanced
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0.1);
 
         waiter = new WebDriverWait(driver, TimeSpan.FromSeconds(40));
-        waiter.Until(driver => driver.FindElement(By.XPath("//button[@id='onetrust-accept-btn-handler']"))).Click();
+        //waiter.Until(driver => driver.FindElement(By.XPath("//button[@id='onetrust-accept-btn-handler']"))).Click();
     }
 
     [Test]
@@ -71,7 +71,7 @@ public class EpamSiteNavigationTestAdvanced
         waiter.Until(driver => driver.FindElement(By.XPath("//form[@action='/search']/child::button[@class='header-search__submit']"))).Click();
 
         act.ScrollToElement(waiter.Until(driver => driver.FindElement(By.XPath("//article[@class='search-results__item']")))).Build().Perform();
-        act.ScrollToElement(driver.FindElement(By.XPath("//*[@class='search-results__footer']"))).Perform();
+        act.ScrollToElement(driver.FindElement(By.XPath("//*[@class='search-results__footer']"))).Build().Perform();
         var actualCountArticles = waiter.Until(driver=>driver.FindElements(By.XPath("//*[@class='search-results__item']")));
 
         Assert.That(actualCountArticles, Has.Count.EqualTo(countArticle), "There are not 20 articles on the one page!");

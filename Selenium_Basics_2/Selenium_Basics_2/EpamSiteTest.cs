@@ -36,9 +36,13 @@ public class EpamSiteTest
         driver.FindElement(By.XPath("//form[@action='/search']/child::button[@class='header-search__submit']")).Click();
 
         Assert.That(driver.Url, Is.EqualTo(urlSearch), "Search doesn't work!");
-        bool isContains = driver.PageSource.Contains("Automation");
+        var first5Items = driver.FindElements(By.XPath("//*[@class = 'search-results__item']")).Take(5);
+        var actualRes = first5Items.Select(x => x.Text);
 
-        Assert.IsTrue(isContains,"Text was not found");
+        foreach(var item in actualRes)
+        {
+            Assert.That(item.Contains("Automation",StringComparison.OrdinalIgnoreCase), "Search doesn't work!");
+        }
     }
 
     [Test]

@@ -8,8 +8,8 @@ namespace ExamITAcadeny;
 public class Tests
 {
     private IWebDriver driver;
-    private const string urlEpam = "https://www.epam.com/careers";
-    private const string urlMain = "https://training.by/";
+    private const string epamCarrersUrl = "https://www.epam.com/careers";
+    private const string trainingUrl = "https://training.by/";
     private WebDriverWait waiter;
 
     [SetUp]
@@ -17,7 +17,7 @@ public class Tests
     {
         driver = new ChromeDriver();
         driver.Manage().Window.Maximize();
-        driver.Navigate().GoToUrl(urlMain);
+        driver.Navigate().GoToUrl(trainingUrl);
         driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(40);
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0.1);
 
@@ -28,15 +28,11 @@ public class Tests
     [Test]
     public void CheckButtonIsDisplayed()
     {
-        driver.Navigate().GoToUrl(urlEpam);
+        driver.Navigate().GoToUrl(epamCarrersUrl);
         var butIsdisplayed = driver.FindElement(By.CssSelector("a[href='https://www.epam.com/support-ukraine']")).Displayed;
         var butIsEnabled = driver.FindElement(By.CssSelector("a[href='https://www.epam.com/support-ukraine']")).Enabled;
         var butActive = false;
-        if (butIsdisplayed && butIsEnabled)
-        {
-            butActive = true;
-        }
-        Assert.IsTrue(butActive);
+        Assert.That(butIsdisplayed && butIsEnabled, Is.True, "Button is not displayed!");
     }
 
     [TestCase("TRAINING", "a.language-control__item:nth-child(1)")]
